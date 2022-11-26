@@ -6,22 +6,44 @@ theme: /
         q!: $regex</start>
         q!: хочу пиццу
         script: 
-            $reactions.answer('Choose')
-            $reactions.buttons([{text: 'Пицца', transition: '/Pizza'}, {text: 'Роллы', transition: '/Susi'}])
+            $reactions.answer('Привет, я FriedPizza_Bot')
+            $reactions.answer('Что будете заказывать?')
+            $reactions.buttons(
+                [
+                    {text: 'Пицца', transition: '/Pizza'}, 
+                    {text: 'Роллы', transition: '/Susi'}
+                ]
+            )
 
     state: Pizza
         script: 
-            $reactions.answer('Choose')
-            $reactions.buttons([{text: 'С мясом', transition: '/Pizza'}, {text: 'С колбасой', transition: '/Susi'}])
+            $reactions.answer('Вот что мы можем предложить')
+            $reactions.buttons(
+                [
+                    {text: 'С мясом', transition: '/Chosed'}, 
+                    {text: 'С колбасой', transition: '/Chosed'},
+                    {text: 'Прочее', transition: '/Chosed'}
+                ]
+            )
 
 
     state: Susi
-        intent!: /пока
-        a: Пока пока
+        script: 
+            $reactions.answer('Вот что мы можем предложить')
+            $reactions.buttons(
+                [
+                    {text: 'Филадельфия', transition: '/Chosed'}, 
+                    {text: 'Фирменные', transition: '/Chosed'},
+                    {text: 'Классические роллы', transition: '/Chosed'}
+                ]
+            )
+    
+    state: Chosed
+        a: И что мне делать дальше?
 
     state: NoMatch
         event!: noMatch
-        a: Я не понял. Вы сказали: {{$request.query}}
+        a: Я не понял.
 
     state: Match
         event!: match
