@@ -6,10 +6,14 @@ theme: /
         q!: $regex</start>
         q!: хочу пиццу
         script: 
+            $reactions.answer('Choose')
             $reactions.buttons([{text: 'Пицца', transition: '/Pizza'}, {text: 'Роллы', transition: '/Susi'}])
 
     state: Pizza
-        a: Pizza
+        script: 
+            $reactions.answer('Choose')
+            $reactions.buttons([{text: 'С мясом', transition: '/Pizza'}, {text: 'С колбасой', transition: '/Susi'}])
+
 
     state: Susi
         intent!: /пока
