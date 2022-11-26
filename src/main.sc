@@ -4,13 +4,14 @@ theme: /
 
     state: Start
         q!: $regex</start>
-        a: Начнём.
+        q!: хочу пиццу
+        script: 
+            $reactions.buttons([{text: 'Пицца', transition: '/Pizza'}, {text: 'Роллы', transition: '/Susi'}])
 
-    state: Hello
-        intent!: /привет
-        a: Привет привет
+    state: Pizza
+        a: Pizza
 
-    state: Bye
+    state: Susi
         intent!: /пока
         a: Пока пока
 
