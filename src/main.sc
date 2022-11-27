@@ -13,7 +13,7 @@ theme: /
         script: 
             $reactions.answer('Привет, я FriedPizza_Bot')
             $reactions.answer('Что будете заказывать?')
-            $reactions.inlineButtons(
+            $reactions.buttons(
                 [
                     {text: 'Пицца', transition: '/Pizza'}, 
                     {text: 'Роллы', transition: '/Susi'}
@@ -35,7 +35,7 @@ theme: /
     state: Susi
         script: 
             $reactions.answer('Вот что мы можем предложить')
-            $reactions.inlineButtons(
+            $reactions.buttons(
                 [
                     {text: 'Филадельфия', transition: '/Chosed'}, 
                     {text: 'Фирменные', transition: '/Chosed'},
