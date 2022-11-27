@@ -55,7 +55,7 @@ theme: /
         event: telegramCallbackQuery
         script:
             $session.pizza_id = parseInt($request.query);
-            $reqctions.answer(pizza[$session.pizza_id].description)
+            $reactions.answer(pizza[$session.pizza_id].description)
 
     state: NoMatch
         event!: noMatch
