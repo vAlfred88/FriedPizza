@@ -48,7 +48,7 @@ theme: /
         script: 
             for (var i = 1; i < Object.keys(pizza).length + 1; i++) {
                 var button_name = pizza[i].value.title + " за " + pizza[i].value.price + " руб."
-                $reactions.inlineButtons({text: button_name,  callback_data: pizza[i].id })
+                $reactions.inlineButtons({text: button_name,  callback_data: id })
             }
     
     state: GetVariant
